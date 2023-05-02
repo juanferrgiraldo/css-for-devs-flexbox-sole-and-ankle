@@ -1,13 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from "../../constants";
-import Logo from "../Logo";
-import SuperHeader from "../SuperHeader";
+import { COLORS, WEIGHTS } from '../../constants';
+import Logo from '../Logo';
+import SuperHeader from '../SuperHeader';
+import MobileMenu from '../MobileMenu';
 
 const Header = () => {
-  // Our site features two visual headers, but they should be
-  // grouped semantically as a single header.
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+
+  // For our mobile hamburger menu, we'll want to use a button
+  // with an onClick handler, something like this:
+  //
+  // <button onClick={() => setShowMobileMenu(true)}>
+
   return (
     <header>
       <SuperHeader />
@@ -25,6 +31,11 @@ const Header = () => {
         </Nav>
         <Side />
       </MainHeader>
+
+      <MobileMenu
+        isOpen={showMobileMenu}
+        onDismiss={() => setShowMobileMenu(false)}
+      />
     </header>
   );
 };
@@ -40,7 +51,7 @@ const MainHeader = styled.div`
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
-  margin: 0 48px;
+  margin: 0px 48px;
 `;
 
 const Side = styled.div`

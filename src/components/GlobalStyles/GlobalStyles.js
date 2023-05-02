@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components/macro';
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -51,7 +51,7 @@ table {
 *:before,
 *:after {
   box-sizing: border-box;
-  line-height: 1.45;
+  line-height: 1.5;
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: auto;
@@ -64,6 +64,13 @@ table {
     float above the app.
   */
   isolation: isolate;
+}
+
+html {
+  /*
+    Silence the warning about missing Reach Dialog styles
+  */
+  --reach-dialog: 1;
 }
 
 html, body, #root {
