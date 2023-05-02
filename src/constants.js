@@ -16,3 +16,15 @@ export const WEIGHTS = {
   medium: 600,
   bold: 800,
 };
+
+const BREAKPOINTS = {
+  tabletMin: 600,
+  laptopMin: 950,
+  desktopMin: 1300,
+};
+
+export const QUERIES = {
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+};
