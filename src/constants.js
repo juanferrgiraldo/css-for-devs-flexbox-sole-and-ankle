@@ -24,7 +24,13 @@ const BREAKPOINTS = {
 };
 
 export const QUERIES = {
-  tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
-  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
-  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+  laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+  desktopAndSmaller: `(max-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+};
+
+export const THEME = {
+  queries: QUERIES,
+  colors: COLORS,
+  weights: WEIGHTS,
 };
