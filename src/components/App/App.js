@@ -20,6 +20,14 @@ const App = () => {
 
 const Main = styled.main`
   padding: 64px 32px;
+
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    padding: 48px 32px;
+  }
+
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
+    padding: 48px 12px;
+  }
 `;
 
 export default App;

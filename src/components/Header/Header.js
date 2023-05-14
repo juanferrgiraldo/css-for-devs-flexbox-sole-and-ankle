@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import { COLORS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
@@ -63,10 +63,14 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
-  border-top: 4px solid ${(props) => props.theme.colors.gray[900]};
   @media ${(props) => props.theme.queries.tabletAndSmaller} {
     justify-content: space-between;
     align-items: center;
+    border-top: 4px solid ${(props) => props.theme.colors.gray[900]};
+  }
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 `;
 
@@ -74,7 +78,7 @@ const DesktopNav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
-  @media ${QUERIES.tabletAndSmaller} {
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
     display: none;
   }
 `;
@@ -88,7 +92,7 @@ const LogoWrapper = styled.div`
 
 const Filler = styled.div`
   flex: 1;
-  @media ${QUERIES.tabletAndSmaller} {
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
     display: none;
   }
 `;
@@ -107,11 +111,11 @@ const NavLink = styled.a`
 
 const MobileActions = styled.div`
   display: none;
-  @media ${QUERIES.tabletAndSmaller} {
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
     display: flex;
     gap: 32px;
   }
-  @media ${QUERIES.phoneAndSmaller} {
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
     gap: 16px;
   }
 `;
