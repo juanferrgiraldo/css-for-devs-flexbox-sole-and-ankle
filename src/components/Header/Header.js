@@ -56,8 +56,8 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow: auto;
   @media ${(props) => props.theme.queries.tabletAndSmaller} {
     justify-content: space-between;
     align-items: center;
@@ -71,7 +71,7 @@ const MainHeader = styled.div`
 
 const DesktopNav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
   margin: 0px 48px;
   @media ${(props) => props.theme.queries.tabletAndSmaller} {
     display: none;
